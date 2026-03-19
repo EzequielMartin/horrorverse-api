@@ -2,7 +2,7 @@ package com.ezequielmartin.horrorverse_api.mapper;
 
 import com.ezequielmartin.horrorverse_api.dto.DirectorCreateRequestDTO;
 import com.ezequielmartin.horrorverse_api.dto.DirectorResponseDTO;
-import com.ezequielmartin.horrorverse_api.dto.MovieOfDirector;
+import com.ezequielmartin.horrorverse_api.dto.MovieOfDirectorDTO;
 import com.ezequielmartin.horrorverse_api.model.Director;
 import com.ezequielmartin.horrorverse_api.model.Movie;
 import org.springframework.stereotype.Component;
@@ -19,12 +19,12 @@ public class DirectorMapper {
         directorResponseDTO.setFirstName(director.getFirstName());
         directorResponseDTO.setLastName(director.getLastName());
 
-        List<MovieOfDirector> moviesOfDirector = new ArrayList<>();
+        List<MovieOfDirectorDTO> moviesOfDirector = new ArrayList<>();
         for (Movie movie : director.getMovies()) {
-            MovieOfDirector movieOfDirector = new MovieOfDirector();
-            movieOfDirector.setMovieId(movie.getId());
-            movieOfDirector.setTitle(movie.getTitle());
-            moviesOfDirector.add(movieOfDirector);
+            MovieOfDirectorDTO movieOfDirectorDTO = new MovieOfDirectorDTO();
+            movieOfDirectorDTO.setMovieId(movie.getId());
+            movieOfDirectorDTO.setTitle(movie.getTitle());
+            moviesOfDirector.add(movieOfDirectorDTO);
         }
         directorResponseDTO.setMovies(moviesOfDirector);
 

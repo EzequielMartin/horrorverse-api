@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class MovieOfDirector {
+public class MovieOfDirectorDTO {
 
     private Long movieId;
     private String title;
