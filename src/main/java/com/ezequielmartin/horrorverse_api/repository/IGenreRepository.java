@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IGenreRepository extends JpaRepository<Genre,Long> {
+    boolean existsByNameIgnoreCase(String name);
 }
